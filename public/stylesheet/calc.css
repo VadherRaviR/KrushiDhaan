@@ -1,0 +1,110 @@
+
+      body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(90deg, rgb(84, 103, 88), rgb(174, 239, 204), rgb(174, 239, 204), rgb(1, 44, 1));
+    margin: 0;
+   
+}
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: transparent;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            display: flex;
+            gap: 20px;
+        }
+         #title {
+            text-align: center;
+            margin-bottom: 30px;
+            height: max-content;
+            background-color: red;
+            padding: 20px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            
+        }
+        #language{
+            width: 200px;
+            height: max-content;
+            color: black;
+            font-size: 1.2rem;
+            padding: 20px;
+            border: 3px solid rgb(3, 27, 3);
+            background-color: transparent;
+            border-radius: 0.3cm;
+        }
+        .calc{
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* border: 1px solid black; */
+            border-radius: 0.5cm;
+            width: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .input-row{
+            margin-left:25%;
+            margin-right: 25%;
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        .input-row input{
+            width: 60%;
+            padding: 15px;
+            border-radius: 0.5cm;
+            border: 3px solid rgb(3, 27, 3);
+            
+        }
+        .input-row select{
+ 
+            width:30%;
+            display: flex;
+            justify-content: space-between;
+            border: 3px solid rgb(3, 27, 3);
+            border-radius: 0.5cm;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        
+        input:focus, select:focus {
+            border: 3px solid rgb(3, 27, 3);
+            outline: none;
+        }
+       .input-row button {
+            background-color: transparent;
+            border: 3px solid rgb(3, 27, 3);
+            color: white;
+            border-radius:0.3cm;
+            width: 450px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #b71c1c;
+        }
+        .result {
+
+            border: 1px solid rgb(3, 27, 3);
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            color: #388e3c;
+            width: max-content;
+            text-align: center;
+        }
+    

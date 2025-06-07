@@ -1,0 +1,193 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Indian Farmers Directory</title>  
+    <link rel="stylesheet" href="/stylesheet/navbar.css">  
+    <link rel="stylesheet" href="/stylesheet/footer.css">  
+    <style>  
+        body {  
+            margin: 0;  
+            font-family: Arial, sans-serif;  
+            background-image: linear-gradient(90deg, rgb(84, 103, 88), rgb(46, 76, 61), rgb(174, 239, 204), rgb(174, 239, 204), rgb(1, 44, 1));   
+            box-sizing: border-box;   
+        }  
+ 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}       
+.crops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.crop-card {
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.crop-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.crop-card h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: rgb(2, 30, 2);
+}
+
+.crop-card p {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.crop-card:hover {
+    transform: scale(1.05);
+}
+h2 {  
+            font-size: 24px;  
+            margin: 10px 0;  
+        }  
+ 
+        .price {  
+            color: green;  
+            font-weight: bold;  
+        }  
+        header {  
+            width: 100%;  
+            text-align: center;  
+            background-color: tomato;  
+            padding: 20px;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="home"><img src="https://static.vecteezy.com/system/resources/previews/014/747/901/original/letter-kd-logo-with-luxury-gold-template-elegance-logo-template-vector.jpg" style="width: 150px; height: 150px; border-radius: 10cm;" alt=""></a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="cropsdata">Crops</a></li>
+            <li><a href="market-yard">Market Yard Analysis</a></li>
+            <li><a href="kishaancalc">Kishaan Calculator</a></li>
+        </ul>
+        <div>
+            <input type="search" placeholder="Search...">
+            <a href="login">Login</a> 
+            <a href="category">Sign Up</a>
+        </div>
+    </nav>
+    <header>  
+        <h1>Indian Fresh Tomato Farmers</h1>  
+        <p>Your source for fresh, locally grown tomatoes!</p>  
+    </header> 
+    <div class="container">
+         
+    <% const farmers = [  
+        {  
+            image: "https://media.istockphoto.com/id/172925573/photo/red-tomatoes-still-on-the-vine.jpg?s=612x612&w=0&k=20&c=uljVOwI9ICETjf-bUHwDxP0sgb6e0hWRkmGcCJMei4E=",  
+            title: "Aarav Sharma",  
+            description: "Organic potatoes grown in the fields of Punjab.",  
+            price: "₹30/kg",  
+            phone: "98765-43210",  
+            location: "Amritsar, Punjab"  
+        },  
+        {  
+            image: "https://media.istockphoto.com/id/171579643/photo/tomato-greenhouse.jpg?s=612x612&w=0&k=20&c=BLtIrrBprkZlIHNfSYIhkm3aebVUjqxsS-Yoqa1ss08=",  
+            title: "Ramesh Kumar",  
+            description: "Fresh tomatoes from a family farm in Rajasthan.",  
+            price: "₹25/kg",  
+            phone: "98765-43213",  
+            location: "Ahmedabad, Gujarat"  
+        },  
+        {  
+            image: "https://media.istockphoto.com/id/172925573/photo/red-tomatoes-still-on-the-vine.jpg?s=612x612&w=0&k=20&c=uljVOwI9ICETjf-bUHwDxP0sgb6e0hWRkmGcCJMei4E=",  
+            title: "Kavya Nair",  
+            description: "Sweet corn harvested in Kerala.",  
+            price: "₹45/kg",  
+            phone: "99876-54324",  
+            location: "Kochi, Kerala"  
+        },  
+        {  
+            image: "https://media.istockphoto.com/id/172925573/photo/red-tomatoes-still-on-the-vine.jpg?s=612x612&w=0&k=20&c=uljVOwI9ICETjf-bUHwDxP0sgb6e0hWRkmGcCJMei4E=",  
+            title: "Aditi Tiwari",  
+            description: "Fresh garlic cultivated in Bihar.",  
+            price: "₹20/kg",  
+            phone: "98765-43214",  
+            location: "Patna, Bihar"  
+        },  
+        {  
+            image: "https://media.istockphoto.com/id/172925573/photo/red-tomatoes-still-on-the-vine.jpg?s=612x612&w=0&k=20&c=uljVOwI9ICETjf-bUHwDxP0sgb6e0hWRkmGcCJMei4E=",  
+            title: "Sarita Desai",  
+            description: "Organic peas grown in Maharashtra.",  
+            price: "₹32/kg",  
+            phone: "91234-56788",  
+            location: "Pune, Maharashtra"  
+        }  
+      ]; %>
+     <div class="crops-grid">  
+        <% farmers.forEach(function(farmer) { %>  
+            <a href="/profile" style="text-decoration: none;">
+                <div class="crop-card">  
+                    <img src="<%= farmer.image %>" alt="<%= farmer.title %>">  
+                    <h2><%= farmer.title %></h2>  
+                    <p><%= farmer.description %></p>  
+                    <p class="price">Price: <%= farmer.price %></p>  
+                    <p>Phone: <%= farmer.phone %></p>  
+                    <p>Location: <%= farmer.location %></p>  
+                </div>  
+            </a>
+        <% }); %>  
+    </div> 
+    </div>
+   
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your platform for empowering farmers with real-time market insights and essential tools for success.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="cropsdata">Crops Information</a></li>
+                    <li><a href="market-yard">Market Analysis</a></li>
+                    <li><a href="kishaancalc">Kishaan Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: support@krushidhaan.com</p>
+                <p>Phone: +91-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul class="social-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Farmers Platform | All Rights Reserved</p>
+        </div>
+    </footer> 
+</body>  
+</html>

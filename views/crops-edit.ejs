@@ -1,0 +1,79 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Crop Form</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">  
+</head>  
+<body>  
+    <div class="container mt-5">  
+        <h2>Add Crop Details</h2>  
+        <form action="/crope-add/<%= newCrops._id %>?_method=PUT" method="POST" enctype="multipart/form-data">  
+            <div class="mb-3">  
+                <label for="type" class="form-label">Crop Type</label>  
+                <input type="text" class="form-control" id="type" name="Crope[Type]" required>  
+            </div>  
+            
+            <div class="mb-3">  
+                <label for="cropsName" class="form-label">Crops Name</label>  
+                <input type="text" class="form-control" value="newCrops.Crop[0].CropsName" id="cropsName" name="Crope[CropsName]" required>  
+            </div>  
+            
+            <div class="mb-3">  
+                <label for="price" class="form-label">Price</label>  
+                <input type="number" value="<%= newCrops.Crop[0].price%>" class="form-control" id="price" name="Crope[price]" required>  
+            </div>  
+
+            <div class="mb-3">  
+                <label for="cropeDesc" class="form-label">Crop Description</label>  
+                <textarea class="form-control"  id="cropeDesc" name="Crope[CropeDesc]" rows="3"> <%= newCrops.Crop[0].CropeDesc%></textarea>  
+            </div>  
+
+            <div class="mb-3">  
+                <label for="cropeImage"   class="form-label">Crop Image</label>  
+                <input type="file" value="newCrops.Crop[0].CropeImage.url" class="form-control" id="cropeImage" name="Crope[CropeImage]" >  
+            </div>  
+
+            
+            <button type="submit" class="btn btn-primary">Submit</button>  
+        </form>  
+    </div>  
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your platform for empowering farmers with real-time market insights and essential tools for success.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="cropsdata">Crops Information</a></li>
+                    <li><a href="market-yard">Market Analysis</a></li>
+                    <li><a href="kishaancalc">Kishaan Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: support@krushidhaan.com</p>
+                <p>Phone: +91-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul class="social-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Farmers Platform | All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>  
+</body>  
+</html>

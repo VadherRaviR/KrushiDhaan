@@ -1,0 +1,53 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >  
+    <title>Farmer Registration</title>  
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+   <style>
+    
+        body{
+            background-image: linear-gradient(90deg, rgb(84, 103, 88), rgb(46, 76, 61), rgb(174, 239, 204), rgb(174, 239, 204), rgb(1, 44, 1)) !important;
+            color: white;
+        }
+   
+   </style>
+</head>  
+<body>  
+
+<div class="container mt-5">  
+    <h2>Farmer Registration Form</h2>  
+    <form id="farmerForm" method="POST" action="/data" enctype="multipart/form-data">  
+        <div class="form-group"> 
+            <label for="fullName">Full Name</label>  
+            <input type="text" class="form-control" id="fullName" required name="farmer[FullName]">  
+        </div>  
+        <div class="form-group">  
+            <label for="email">Email</label>  
+            <input type="email" class="form-control" id="email" required name="farmer[Email]">  
+        </div>  
+        <div class="form-group">  
+            <label for="mobileNumber">Mobile Number</label>  
+            <input type="number" class="form-control" id="mobileNumber" name="farmer[MobileNumber]">  
+        </div> 
+        <div class="form-group">  
+            <label for="image">Mobile Number</label>  
+            <input type="file" class="form-control" id="image" name="farmer[ProfileImage]">  
+        </div> 
+        <div class="form-group">  
+            <label>Address</label>  
+            <input style="margin:  10px 10px 10px 0px;" type="text" class="form-control" placeholder="State" id="state" name="farmer[State]">  
+            <input style="margin:  10px 10px 10px 0px;" type="text" class="form-control" placeholder="District" id="district" name="farmer[District]">  
+            <input style="margin:  10px 10px 10px 0px;" type="text" class="form-control" placeholder="Taluka" id="taluka" name="farmer[Taluka]">  
+        </div>  
+        
+  
+         
+        <button type="submit" class="btn btn-primary">Submit</button>  
+    </form>  
+    
+</div>
+</body>
+</html>

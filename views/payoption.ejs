@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options</title>
+    <link rel="stylesheet" href="/stylesheet/navbar.css">
+    <link rel="stylesheet" href="/stylesheet/footer.css">
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    body{
+        background-image: linear-gradient(90deg, rgb(84, 103, 88), rgb(46, 76, 61), rgb(174, 239, 204), rgb(1, 44, 1));
+        font-family: Arial, Helvetica, sans-serif;
+    }
+        .option-box {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+            background-color: red;
+            border: 1px solid rgb(3,29,23);
+            width: 100%;
+        }
+
+        .option {
+            text-align: center;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .option i {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+
+        .option p {
+            margin: 0;
+            font-size: 14px;
+            color: black;
+        }
+
+        .form-container {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgb(3,29,23);
+            color: white;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            color: black;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="home"><img src="https://static.vecteezy.com/system/resources/previews/014/747/901/original/letter-kd-logo-with-luxury-gold-template-elegance-logo-template-vector.jpg" style="width: 150px; height: 150px; border-radius: 10cm;" alt=""></a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="cropsdata">Crops</a></li>
+            <li><a href="market-yard">Market Yard Analysis</a></li>
+            <li><a href="kishaancalc">Kishaan Calculator</a></li>
+        </ul>
+        <div>
+            <input type="search" placeholder="Search...">
+            <a href="login">Login</a> 
+            <a href="category">Sign Up</a>
+        </div>
+    </nav> 
+    <div class="form-container">
+        <h2>Crop Purchase Form</h2>
+        <form action="/submit-crop-details" method="POST">
+            <div class="form-group">
+                <label for="crop-name">Crop Name</label>
+                <input type="text" id="crop-name" name="cropName" placeholder="Enter Crop Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity (in kg)</label>
+                <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price per kg (in ₹)</label>
+                <input type="number" id="price" name="price" placeholder="Enter Price per kg" required>
+            </div>
+
+            <div class="form-group">
+                <label for="purchase-date">Purchase Date</label>
+                <input type="date" id="purchase-date" name="purchaseDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="market">Market</label>
+                <select id="market" name="market" required>
+                    <option value="">--Select Market--</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Vadodara">Vadodara</option>
+                    <!-- Add more markets here as needed -->
+                </select>
+            </div>
+            <div class="bg-white  text-black p-6 rounded-lg shadow-md max-w-md mx-auto">
+                <h2 class="text-lg font-semibold mb-4">
+                    Another payment method
+                </h2>
+                <div class="mb-4">
+                    <label class="inline-flex items-center text-black">
+                        <input class="form-radio text-blue-600" name="payment_method" type="radio" />
+                        <span class="ml-2">
+                            Credit or debit card
+                        </span>
+                    </label>
+                   
+                </div>
+                <div class="mb-4">
+                    <label class="inline-flex items-center  text-black">
+                        <input class="form-radio text-blue-600" name="payment_method" type="radio" />
+                        <span class="ml-2">
+                            Net Banking
+                        </span>
+                    </label>
+                    <select class="ml-4 mt-2 p-2 border rounded">
+                        <option>
+                            Choose an Option
+                        </option>
+                        <!-- Add other options as needed -->
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="inline-flex items-center  text-black">
+                        <input class="form-radio text-blue-600" name="payment_method" type="radio" />
+                        <span class="ml-2">
+                            Other UPI Apps
+                        </span>
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label class="inline-flex items-center  text-black">
+                        <input class="form-radio text-blue-600" disabled="" name="payment_method" type="radio" />
+                        <span class="ml-2 text-gray-500">
+                            EMI Unavailable
+                            <a class="text-blue-600" href="#">
+                                Why?
+                            </a>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="option-box">
+        <!-- Phone Option -->
+        <div class="option">
+            <a href="tel:+1234567890">
+                <i class="fa-solid fa-phone"></i>
+                <p>Phone</p>
+            </a>
+        </div>
+
+        <!-- Payment Option -->
+        <div class="option">
+            <a href="/payoption">
+                <i class="fa-solid fa-credit-card"></i>
+                <p>Payment</p>
+            </a>
+        </div>
+
+        <!-- Zoom Meeting Option -->
+        <div class="option">
+            <i class="fa-regular fa-handshake"></i>
+            <p>Zoom</p>
+            </a>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your platform for empowering farmers with real-time market insights and essential tools for success.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="cropsdata">Crops Information</a></li>
+                    <li><a href="market-yard">Market Analysis</a></li>
+                    <li><a href="kishaancalc">Kishaan Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: support@krushidhaan.com</p>
+                <p>Phone: +91-123-456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul class="social-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Farmers Platform | All Rights Reserved</p>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

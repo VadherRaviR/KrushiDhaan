@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <%- include('./includes/navbar') %>
+
+    <div class="main">
+      <div class="container">
+        <div class="row mt-4">
+          <div
+            class="col-9 offset-2 main-card p-2 mb-5"
+            style="
+              box-shadow: rgba(0, 0, 0, 0.762) 0px 40px 40px;
+              border-top: 1px solid rgba(0, 0, 0, 0.148);
+            "
+          >
+            <div class="row farmer-card" style="background-color: whitesmoke">
+              <div class="col-7 p-3 Details">
+                <h1 class="p-2" style="text-decoration-line: underline">
+                  Personal Details :-
+                </h1>
+                <div
+                  class="extra-details p-1"
+                  style="font-size: 1.4rem; margin-left: 0.5rem"
+                >
+                  <p>Email: ramesh123@gmail.com</p>
+
+                  <p>MobileNumber: 98765-43213</p>
+                  <div class="adress" style="display: flex; gap: 0.6rem">
+                    <div class="adress-field">
+                      <p>Address:</p>
+                    </div>
+                    <div class="adress-details">
+                      <p>State : Gujarat</p>
+                      <p>District : Ahmedabad</p>
+                      <p>Taluka : Ahmedabad</p>
+                    </div>
+                  </div>
+                  <div class="ratings">
+                    <p>Ratings : 3/5</p>
+                  </div>
+                  <p>
+                    About Me :- I've been farming for over 20 years,
+                    specializing in sustainable agriculture practices. My farm
+                    focuses on crop rotation and organic farming methods to
+                    ensure the best quality produce while preserving the land
+                    for future generations.
+                  </p>
+                  <div class="buttons">
+                    <a href="payoption"
+                      ><button
+                        class="addbtn btn btn-warning mt-4"
+                        style="margin-right: 3rem"
+                      >
+                        Purchase
+                      </button></a
+                    >
+                    <a href="/crops">
+                      <button
+                        class="addbtn btn btn-success mt-4"
+                        style="margin-right: 3rem"
+                      >
+                        Add New Crop
+                      </button>
+                    </a>
+                    <form action="/profile/:id/crops-edit" method="GET">
+                      <button
+                        class="addbtn btn btn-danger mt-4"
+                        style="padding: 8px 20px"
+                      >
+                        Edit Details
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-4 profile-picture p-4 m-4"
+                style="display: flex; align-items: self-start"
+              >
+                <img
+                  src="https://img.freepik.com/premium-photo/editorial-photo-desi-farmer-rice-field_1110958-84783.jpg?w=740"
+                  alt=""
+                  style="
+                    width: 100%;
+                    height: 20rem;
+                    border-radius: 50%;
+                    box-shadow: rgba(0, 0, 0, 0.762) 0px 20px 20px;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="col crops mt-2 p-3">
+            <h1>Your Added Crops :-</h1>
+
+            <%for(newCrops of newCropsList){%>
+            <div class="card col-10">
+              <div class="row">
+                <div class="col-4 crop-card p-3">
+                  <img
+                    src="<%= newCrops.Crop[0].CropeImage.url%>"
+                    alt=""
+                    width="100%"
+                    style="
+                      height: 20rem;
+                      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    "
+                  />
+                </div>
+                <div class="col-8 crop-details mt-3">
+                  <p>Name :-<%= newCrops.Crop[0].CropsName%></p>
+                  <p>Price :- &#8377;<%= newCrops.Crop[0].price%>/Kg</p>
+                  <p style="overflow-y: auto; height: 80px">
+                    Description :- <%= newCrops.Crop[0].CropeDesc%>
+                  </p>
+                  <div
+                    class="buttons mt-5"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      gap: 20px;
+                    "
+                  >
+                    <form action="/profile/:id/crops-edit" method="GET">
+                      <button
+                        class="btn btn-success"
+                        style="
+                          padding-left: 2rem;
+                          padding-right: 2rem;
+                          margin-right: 2rem;
+                        "
+                      >
+                        Edit Details
+                      </button>
+                    </form>
+                    <button
+                      class="btn btn-danger"
+                      style="padding-left: 2rem; padding-right: 2rem"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%}%>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./includes/footer') %>
+  </body>
+</html>
